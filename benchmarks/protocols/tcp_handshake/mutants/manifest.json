@@ -1,0 +1,52 @@
+{
+  "protocol": "tcp_handshake",
+  "source": "reference.py",
+  "n_candidates": 14,
+  "n_kept": 6,
+  "n_killed_candidates": 10,
+  "n_survived_candidates": 4,
+  "mutants": [
+    {
+      "file": "cosmic_00_Comparison_Eq_NotEq_0.py",
+      "operator": "core/ReplaceComparisonOperator_Eq_NotEq",
+      "occurrence": 0,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_01_Comparison_NotEq_Eq_0.py",
+      "operator": "core/ReplaceComparisonOperator_NotEq_Eq",
+      "occurrence": 0,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_02_Comparison_NotEq_Eq_1.py",
+      "operator": "core/ReplaceComparisonOperator_NotEq_Eq",
+      "occurrence": 1,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_03_Comparison_NotEq_Eq_2.py",
+      "operator": "core/ReplaceComparisonOperator_NotEq_Eq",
+      "occurrence": 2,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_04_OrWithAnd_0.py",
+      "operator": "core/ReplaceOrWithAnd",
+      "occurrence": 0,
+      "test_outcome": "survived",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_05_OrWithAnd_1.py",
+      "operator": "core/ReplaceOrWithAnd",
+      "occurrence": 1,
+      "test_outcome": "survived",
+      "engine": "cosmic-ray"
+    }
+  ]
+}

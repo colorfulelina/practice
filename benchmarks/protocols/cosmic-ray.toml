@@ -1,0 +1,13 @@
+# Cosmic Ray config matching methodology §7.2.1.
+# The benchmark files themselves are written by:
+#   python -m semanticdrift seed-mutants --python-only
+# which uses these operators and keeps killed + surviving mutants.
+
+[cosmic-ray]
+module-path = "."
+timeout = 10.0
+excluded-modules = ["*/mutants/*"]
+test-command = "python -m pytest ../../tests/test_week12_protocols.py -q"
+
+[cosmic-ray.distributor]
+name = "local"

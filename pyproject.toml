@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semanticdrift"
+version = "0.1.0"
+description = "Verifier-guided LLM agents for detecting semantic drift in formal models"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "cosmic-ray>=8.7",
+  "pycparser>=2.21",
+]
+# Weeks 4+ (not installed yet)
+full = [
+  "requests>=2.31",
+  "langgraph>=0.2",
+  "langchain-ollama>=0.1",
+  "hypothesis>=6.100",
+  "pandas>=2.0",
+  "scipy>=1.11",
+  "statsmodels>=0.14",
+  "pycparser>=2.21",
+  "sentence-transformers>=3.0",
+]
+
+[project.scripts]
+semanticdrift = "semanticdrift.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

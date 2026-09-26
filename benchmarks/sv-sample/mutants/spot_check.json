@@ -1,0 +1,311 @@
+{
+  "seed": 7,
+  "n_requested": 30,
+  "n_reviewed": 30,
+  "instruction": "Each row is one seeded C mutant. plausible=yes means the edit is a recognizable boundary, comparison, or off-by-one bug, not junk.",
+  "reviews": [
+    {
+      "file": "c__reducercommutativity__sep20-1.c__boundary_24.c",
+      "task_yaml": "c/reducercommutativity/sep20-1.yml",
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "loop bound i<N to i<=N"
+    },
+    {
+      "file": "c__array-examples__standard_copy8_ground-1.c__boundary_52.c",
+      "task_yaml": "c/array-examples/standard_copy8_ground-1.yml",
+      "operator": "boundary",
+      "line": 52,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "postcondition scan bound, still a loop off-by-one"
+    },
+    {
+      "file": "c__reducercommutativity__rangesum05.c__boundary_60.c",
+      "task_yaml": "c/reducercommutativity/rangesum05.yml",
+      "operator": "boundary",
+      "line": 60,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "shift loop i<N-1 to i<=N-1 (can OOB on x[i+1])"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_24-1.c__boundary_35.c",
+      "task_yaml": "c/array-examples/sanfoundry_24-1.yml",
+      "operator": "boundary",
+      "line": 35,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "loop bound i<num to i<=num"
+    },
+    {
+      "file": "c__loops__sum04-2.c__boundary_15.c",
+      "task_yaml": "c/loops/sum04-2.yml",
+      "operator": "boundary",
+      "line": 15,
+      "old": "<=",
+      "new": "<",
+      "plausible": "yes",
+      "note": "accumulation loop i<=SIZE to i<SIZE"
+    },
+    {
+      "file": "c__array-examples__standard_init3_ground-2.c__boundary_27.c",
+      "task_yaml": "c/array-examples/standard_init3_ground-2.yml",
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "postcondition scan bound, still a loop off-by-one"
+    },
+    {
+      "file": "c__array-examples__standard_init6_ground-2.c__boundary_26.c",
+      "task_yaml": "c/array-examples/standard_init6_ground-2.yml",
+      "operator": "boundary",
+      "line": 26,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "init loop i<N to i<=N"
+    },
+    {
+      "file": "c__array-examples__standard_init2_ground-2.c__boundary_22.c",
+      "task_yaml": "c/array-examples/standard_init2_ground-2.yml",
+      "operator": "boundary",
+      "line": 22,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "postcondition scan bound, still a loop off-by-one"
+    },
+    {
+      "file": "c__pthread__stack-2.c__boundary_110.c",
+      "task_yaml": "c/pthread/stack-2.yml",
+      "operator": "boundary",
+      "line": 110,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "pthread worker loop i<SIZE to i<=SIZE"
+    },
+    {
+      "file": "c__array-examples__standard_copy5_ground-1.c__boundary_32.c",
+      "task_yaml": "c/array-examples/standard_copy5_ground-1.yml",
+      "operator": "boundary",
+      "line": 32,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "copy loop i<N to i<=N"
+    },
+    {
+      "file": "c__reducercommutativity__max05-1.c__boundary_27.c",
+      "task_yaml": "c/reducercommutativity/max05-1.yml",
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "max comparison ret<x[i] to ret<=x[i]; likely equivalent, still a boundary flip"
+    },
+    {
+      "file": "c__loops__trex01-2.c__boundary_25.c",
+      "task_yaml": "c/loops/trex01-2.yml",
+      "operator": "boundary",
+      "line": 25,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "doubling loop z<k to z<=k"
+    },
+    {
+      "file": "c__reducercommutativity__sep05-1.c__boundary_24.c",
+      "task_yaml": "c/reducercommutativity/sep05-1.yml",
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "loop bound i<N to i<=N"
+    },
+    {
+      "file": "c__reducercommutativity__sum10-1.c__boundary_49.c",
+      "task_yaml": "c/reducercommutativity/sum10-1.yml",
+      "operator": "boundary",
+      "line": 49,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "shift loop i<N-1 to i<=N-1"
+    },
+    {
+      "file": "c__pthread__triangular-longest-2.c__boundary_33.c",
+      "task_yaml": "c/pthread/triangular-longest-2.yml",
+      "operator": "boundary",
+      "line": 33,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "pthread worker loop k<NUM to k<=NUM"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_02_ground.c__boundary_23.c",
+      "task_yaml": "c/array-examples/sanfoundry_02_ground.yml",
+      "operator": "boundary",
+      "line": 23,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "init loop i<MAX to i<=MAX"
+    },
+    {
+      "file": "c__reducercommutativity__avg05-1.c__boundary_26.c",
+      "task_yaml": "c/reducercommutativity/avg05-1.yml",
+      "operator": "boundary",
+      "line": 26,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "sum loop i<N to i<=N"
+    },
+    {
+      "file": "c__pthread__triangular-longest-1.c__boundary_24.c",
+      "task_yaml": "c/pthread/triangular-longest-1.yml",
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "pthread worker loop k<NUM to k<=NUM"
+    },
+    {
+      "file": "c__pthread__queue.c__boundary_115.c",
+      "task_yaml": "c/pthread/queue.yml",
+      "operator": "boundary",
+      "line": 115,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "producer loop i<(SIZE-1) to i<=(SIZE-1)"
+    },
+    {
+      "file": "c__loops__trex04_abstracted.c__boundary_41.c",
+      "task_yaml": "c/loops/trex04_abstracted.yml",
+      "operator": "boundary",
+      "line": 41,
+      "old": ">=",
+      "new": ">",
+      "plausible": "yes",
+      "note": "assume-style input bound, still a boundary flip"
+    },
+    {
+      "file": "c__loops__sum04-1.c__boundary_15.c",
+      "task_yaml": "c/loops/sum04-1.yml",
+      "operator": "boundary",
+      "line": 15,
+      "old": "<=",
+      "new": "<",
+      "plausible": "yes",
+      "note": "accumulation loop i<=SIZE to i<SIZE"
+    },
+    {
+      "file": "c__array-examples__standard_sentinel-2.c__boundary_19.c",
+      "task_yaml": "c/array-examples/standard_sentinel-2.yml",
+      "operator": "boundary",
+      "line": 19,
+      "old": ">=",
+      "new": ">",
+      "plausible": "yes",
+      "note": "index guard pos>=0 to pos>0 (drops index 0)"
+    },
+    {
+      "file": "c__array-examples__standard_minInArray_ground-2.c__boundary_14.c",
+      "task_yaml": "c/array-examples/standard_minInArray_ground-2.yml",
+      "operator": "boundary",
+      "line": 14,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "init loop i<N to i<=N"
+    },
+    {
+      "file": "c__array-examples__sorting_bubblesort_ground-2.c__boundary_21.c",
+      "task_yaml": "c/array-examples/sorting_bubblesort_ground-2.yml",
+      "operator": "boundary",
+      "line": 21,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "bubblesort inner bound i<N to i<=N"
+    },
+    {
+      "file": "c__loops__terminator_02-2.c__boundary_22.c",
+      "task_yaml": "c/loops/terminator_02-2.yml",
+      "operator": "boundary",
+      "line": 22,
+      "old": ">",
+      "new": ">=",
+      "plausible": "yes",
+      "note": "assume-style input bound x>-100 to x>=-100"
+    },
+    {
+      "file": "c__loops__count_up_down-1.c__boundary_17.c",
+      "task_yaml": "c/loops/count_up_down-1.yml",
+      "operator": "boundary",
+      "line": 17,
+      "old": ">",
+      "new": ">=",
+      "plausible": "yes",
+      "note": "countdown while(x>0) to while(x>=0)"
+    },
+    {
+      "file": "c__pthread__stack_longest-2.c__boundary_95.c",
+      "task_yaml": "c/pthread/stack_longest-2.yml",
+      "operator": "boundary",
+      "line": 95,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "assume bound tmp<SIZE to tmp<=SIZE"
+    },
+    {
+      "file": "c__array-examples__standard_init4_ground-2.c__boundary_32.c",
+      "task_yaml": "c/array-examples/standard_init4_ground-2.yml",
+      "operator": "boundary",
+      "line": 32,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "postcondition scan bound, still a loop off-by-one"
+    },
+    {
+      "file": "c__loops__string-1.c__boundary_58.c",
+      "task_yaml": "c/loops/string-1.yml",
+      "operator": "boundary",
+      "line": 58,
+      "old": ">",
+      "new": ">=",
+      "plausible": "yes",
+      "note": "search result j>nc_B-1 to j>=nc_B-1"
+    },
+    {
+      "file": "c__array-examples__standard_two_index_09.c__boundary_14.c",
+      "task_yaml": "c/array-examples/standard_two_index_09.yml",
+      "operator": "boundary",
+      "line": 14,
+      "old": "<",
+      "new": "<=",
+      "plausible": "yes",
+      "note": "fill loop i<size to i<=size"
+    }
+  ],
+  "reviewed_by": "hand review of the source line around the recorded operator",
+  "n_plausible": 30,
+  "n_implausible": 0
+}

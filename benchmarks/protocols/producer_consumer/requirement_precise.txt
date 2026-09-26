@@ -1,0 +1,14 @@
+A single bounded buffer of fixed capacity N is shared by producers and
+consumers.
+
+A producer may add an item only when the buffer is not full. A consumer may
+take an item only when the buffer is not empty. The buffer length must never
+exceed N (no overflow) and must never go negative.
+
+The system must not deadlock: if the buffer has free slots, a waiting producer
+must eventually be able to proceed; if the buffer has items, a waiting consumer
+must eventually be able to proceed. Producers and consumers are scheduled
+fairly enough that a continuously enabled party is eventually run.
+
+There is one buffer, capacity N is constant, and no other process writes the
+buffer except through the producer and consumer operations.

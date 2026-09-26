@@ -1,0 +1,618 @@
+{
+  "n_reviewed": 61,
+  "n_vacuous": 27,
+  "n_not_vacuous": 34,
+  "label": "vacuous=yes means the auditor should flag this formula (or this mutation of the original) as doing no work. vacuous=no means it is still a real claim; flagging it would be a false alarm.",
+  "reviews": [
+    {
+      "id": "dining_philosophers.mutex_neighbors__original",
+      "source": "component_c",
+      "property_id": "dining_philosophers.mutex_neighbors",
+      "kind": "original",
+      "formula": "[] !( (eating[0] && eating[1]) || (eating[1] && eating[2]) || (eating[2] && eating[3]) || (eating[3] && eating[4]) || (eating[4] && eating[0]) )",
+      "original": "[] !( (eating[0] && eating[1]) || (eating[1] && eating[2]) || (eating[2] && eating[3]) || (eating[3] && eating[4]) || (eating[4] && eating[0]) )",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "peterson.mutex__original",
+      "source": "component_c",
+      "property_id": "peterson.mutex",
+      "kind": "original",
+      "formula": "[] !(inCS0 && inCS1)",
+      "original": "[] !(inCS0 && inCS1)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "peterson.mutex__guard_false",
+      "source": "component_c",
+      "property_id": "peterson.mutex",
+      "kind": "guard_false",
+      "formula": "[] ! (false && true)",
+      "original": "[] !(inCS0 && inCS1)",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    },
+    {
+      "id": "peterson.starve0__original",
+      "source": "component_c",
+      "property_id": "peterson.starve0",
+      "kind": "original",
+      "formula": "[] (flag0 -> <> inCS0)",
+      "original": "[] (flag0 -> <> inCS0)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "peterson.starve0__antecedent_forced",
+      "source": "component_c",
+      "property_id": "peterson.starve0",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> <> inCS0)",
+      "original": "[] (flag0 -> <> inCS0)",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "peterson.starve0__consequent_trivial",
+      "source": "component_c",
+      "property_id": "peterson.starve0",
+      "kind": "consequent_trivial",
+      "formula": "[] (flag0 -> true)",
+      "original": "[] (flag0 -> <> inCS0)",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "peterson.starve0__eventually_to_true",
+      "source": "component_c",
+      "property_id": "peterson.starve0",
+      "kind": "eventually_to_true",
+      "formula": "[] (flag0 -> <> true)",
+      "original": "[] (flag0 -> <> inCS0)",
+      "vacuous": "yes",
+      "note": "eventually-true holds on any infinite run, so the liveness obligation does no work"
+    },
+    {
+      "id": "peterson.starve1__original",
+      "source": "component_c",
+      "property_id": "peterson.starve1",
+      "kind": "original",
+      "formula": "[] (flag1 -> <> inCS1)",
+      "original": "[] (flag1 -> <> inCS1)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "peterson.starve1__antecedent_forced",
+      "source": "component_c",
+      "property_id": "peterson.starve1",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> <> inCS1)",
+      "original": "[] (flag1 -> <> inCS1)",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "peterson.starve1__consequent_trivial",
+      "source": "component_c",
+      "property_id": "peterson.starve1",
+      "kind": "consequent_trivial",
+      "formula": "[] (flag1 -> true)",
+      "original": "[] (flag1 -> <> inCS1)",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "peterson.starve1__eventually_to_true",
+      "source": "component_c",
+      "property_id": "peterson.starve1",
+      "kind": "eventually_to_true",
+      "formula": "[] (flag1 -> <> true)",
+      "original": "[] (flag1 -> <> inCS1)",
+      "vacuous": "yes",
+      "note": "eventually-true holds on any infinite run, so the liveness obligation does no work"
+    },
+    {
+      "id": "producer_consumer.no_overflow__original",
+      "source": "component_c",
+      "property_id": "producer_consumer.no_overflow",
+      "kind": "original",
+      "formula": "[] (count <= N)",
+      "original": "[] (count <= N)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "tcp_handshake.both_established_before_accept__original",
+      "source": "component_c",
+      "property_id": "tcp_handshake.both_established_before_accept",
+      "kind": "original",
+      "formula": "[] ( (client_accepted || server_accepted) -> (cstate == ESTABLISHED && sstate == ESTABLISHED) )",
+      "original": "[] ( (client_accepted || server_accepted) -> (cstate == ESTABLISHED && sstate == ESTABLISHED) )",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "tcp_handshake.both_established_before_accept__antecedent_forced",
+      "source": "component_c",
+      "property_id": "tcp_handshake.both_established_before_accept",
+      "kind": "antecedent_forced",
+      "formula": "[] ( true -> (cstate == ESTABLISHED && sstate == ESTABLISHED) )",
+      "original": "[] ( (client_accepted || server_accepted) -> (cstate == ESTABLISHED && sstate == ESTABLISHED) )",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "tcp_handshake.both_established_before_accept__consequent_trivial",
+      "source": "component_c",
+      "property_id": "tcp_handshake.both_established_before_accept",
+      "kind": "consequent_trivial",
+      "formula": "[] ( (client_accepted || server_accepted) -> true )",
+      "original": "[] ( (client_accepted || server_accepted) -> (cstate == ESTABLISHED && sstate == ESTABLISHED) )",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "tcp_handshake.no_server_established_alone__original",
+      "source": "component_c",
+      "property_id": "tcp_handshake.no_server_established_alone",
+      "kind": "original",
+      "formula": "[] !(sstate == ESTABLISHED && cstate != ESTABLISHED)",
+      "original": "[] !(sstate == ESTABLISHED && cstate != ESTABLISHED)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "tcp_handshake.no_server_established_alone__guard_false",
+      "source": "component_c",
+      "property_id": "tcp_handshake.no_server_established_alone",
+      "kind": "guard_false",
+      "formula": "[] ! (false && true)",
+      "original": "[] !(sstate == ESTABLISHED && cstate != ESTABLISHED)",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    },
+    {
+      "id": "two_phase_commit.atomicity__original",
+      "source": "component_c",
+      "property_id": "two_phase_commit.atomicity",
+      "kind": "original",
+      "formula": "[] ( (outcome[0] != unset && outcome[1] != unset && outcome[2] != unset) -> (outcome[0] == outcome[1] && outcome[1] == outcome[2]) )",
+      "original": "[] ( (outcome[0] != unset && outcome[1] != unset && outcome[2] != unset) -> (outcome[0] == outcome[1] && outcome[1] == outcome[2]) )",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "two_phase_commit.atomicity__antecedent_forced",
+      "source": "component_c",
+      "property_id": "two_phase_commit.atomicity",
+      "kind": "antecedent_forced",
+      "formula": "[] ( true -> (outcome[0] == outcome[1] && outcome[1] == outcome[2]) )",
+      "original": "[] ( (outcome[0] != unset && outcome[1] != unset && outcome[2] != unset) -> (outcome[0] == outcome[1] && outcome[1] == outcome[2]) )",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "two_phase_commit.atomicity__consequent_trivial",
+      "source": "component_c",
+      "property_id": "two_phase_commit.atomicity",
+      "kind": "consequent_trivial",
+      "formula": "[] ( (outcome[0] != unset && outcome[1] != unset && outcome[2] != unset) -> true )",
+      "original": "[] ( (outcome[0] != unset && outcome[1] != unset && outcome[2] != unset) -> (outcome[0] == outcome[1] && outcome[1] == outcome[2]) )",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "two_phase_commit.commit_only_if_all_yes__original",
+      "source": "component_c",
+      "property_id": "two_phase_commit.commit_only_if_all_yes",
+      "kind": "original",
+      "formula": "[] ( (decision == d_commit) -> (vote[0] == v_commit && vote[1] == v_commit && vote[2] == v_commit) )",
+      "original": "[] ( (decision == d_commit) -> (vote[0] == v_commit && vote[1] == v_commit && vote[2] == v_commit) )",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "two_phase_commit.commit_only_if_all_yes__antecedent_forced",
+      "source": "component_c",
+      "property_id": "two_phase_commit.commit_only_if_all_yes",
+      "kind": "antecedent_forced",
+      "formula": "[] ( true -> (vote[0] == v_commit && vote[1] == v_commit && vote[2] == v_commit) )",
+      "original": "[] ( (decision == d_commit) -> (vote[0] == v_commit && vote[1] == v_commit && vote[2] == v_commit) )",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "two_phase_commit.commit_only_if_all_yes__consequent_trivial",
+      "source": "component_c",
+      "property_id": "two_phase_commit.commit_only_if_all_yes",
+      "kind": "consequent_trivial",
+      "formula": "[] ( (decision == d_commit) -> true )",
+      "original": "[] ( (decision == d_commit) -> (vote[0] == v_commit && vote[1] == v_commit && vote[2] == v_commit) )",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "sv:c/properties/no-data-race.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/no-data-race.prp:0",
+      "kind": "original",
+      "formula": "G ! data-race",
+      "original": "G ! data-race",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/no-data-race.prp:0__guard_false",
+      "source": "component_a",
+      "property_id": "sv:c/properties/no-data-race.prp:0",
+      "kind": "guard_false",
+      "formula": "G ! false",
+      "original": "G ! data-race",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    },
+    {
+      "id": "sv:c/properties/no-overflow.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/no-overflow.prp:0",
+      "kind": "original",
+      "formula": "G ! overflow",
+      "original": "G ! overflow",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/no-overflow.prp:0__guard_false",
+      "source": "component_a",
+      "property_id": "sv:c/properties/no-overflow.prp:0",
+      "kind": "guard_false",
+      "formula": "G ! false",
+      "original": "G ! overflow",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    },
+    {
+      "id": "sv:c/properties/unreach-call.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/unreach-call.prp:0",
+      "kind": "original",
+      "formula": "G ! call(reach_error())",
+      "original": "G ! call(reach_error())",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/unreach-call.prp:0__guard_false",
+      "source": "component_a",
+      "property_id": "sv:c/properties/unreach-call.prp:0",
+      "kind": "guard_false",
+      "formula": "G ! false",
+      "original": "G ! call(reach_error())",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    },
+    {
+      "id": "sv:c/properties/valid-memsafety.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/valid-memsafety.prp:0",
+      "kind": "original",
+      "formula": "G valid-free",
+      "original": "G valid-free",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/valid-memsafety.prp:1__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/valid-memsafety.prp:1",
+      "kind": "original",
+      "formula": "G valid-deref",
+      "original": "G valid-deref",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/valid-memsafety.prp:2__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/valid-memsafety.prp:2",
+      "kind": "original",
+      "formula": "G valid-memtrack",
+      "original": "G valid-memtrack",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/termination.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/termination.prp:0",
+      "kind": "original",
+      "formula": "F end",
+      "original": "F end",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "sv:c/properties/termination.prp:0__eventually_to_true",
+      "source": "component_a",
+      "property_id": "sv:c/properties/termination.prp:0",
+      "kind": "eventually_to_true",
+      "formula": "F true",
+      "original": "F end",
+      "vacuous": "yes",
+      "note": "eventually-true holds on any infinite run, so the liveness obligation does no work"
+    },
+    {
+      "id": "sv:c/properties/def-behavior.prp:0__original",
+      "source": "component_a",
+      "property_id": "sv:c/properties/def-behavior.prp:0",
+      "kind": "original",
+      "formula": "G def-behavior",
+      "original": "G def-behavior",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_false_implies_mutex__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_mutex",
+      "kind": "original",
+      "formula": "[] (false -> !(inCS0 && inCS1))",
+      "original": "[] (false -> !(inCS0 && inCS1))",
+      "vacuous": "yes",
+      "note": "classic vacuous implication: antecedent never holds"
+    },
+    {
+      "id": "constructed_false_implies_mutex__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_mutex",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> !(inCS0 && inCS1))",
+      "original": "[] (false -> !(inCS0 && inCS1))",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_false_implies_mutex__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_mutex",
+      "kind": "consequent_trivial",
+      "formula": "[] (false -> true)",
+      "original": "[] (false -> !(inCS0 && inCS1))",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_overflow_implies_mutex__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_overflow_implies_mutex",
+      "kind": "original",
+      "formula": "[] (crit_overflow -> !(inCS0 && inCS1))",
+      "original": "[] (crit_overflow -> !(inCS0 && inCS1))",
+      "vacuous": "yes",
+      "note": "on gold Peterson crit_overflow is never set, so the implication never fires"
+    },
+    {
+      "id": "constructed_overflow_implies_mutex__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_overflow_implies_mutex",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> !(inCS0 && inCS1))",
+      "original": "[] (crit_overflow -> !(inCS0 && inCS1))",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_overflow_implies_mutex__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_overflow_implies_mutex",
+      "kind": "consequent_trivial",
+      "formula": "[] (crit_overflow -> true)",
+      "original": "[] (crit_overflow -> !(inCS0 && inCS1))",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_always_true__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_always_true",
+      "kind": "original",
+      "formula": "[] true",
+      "original": "[] true",
+      "vacuous": "yes",
+      "note": "tautology"
+    },
+    {
+      "id": "constructed_eventually_true__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_eventually_true",
+      "kind": "original",
+      "formula": "<> true",
+      "original": "<> true",
+      "vacuous": "yes",
+      "note": "liveness that cannot fail on an infinite run"
+    },
+    {
+      "id": "constructed_false_implies_overflow__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_overflow",
+      "kind": "original",
+      "formula": "[] (false -> (count <= N))",
+      "original": "[] (false -> (count <= N))",
+      "vacuous": "yes",
+      "note": "vacuous buffer-safety implication"
+    },
+    {
+      "id": "constructed_false_implies_overflow__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_overflow",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> (count <= N))",
+      "original": "[] (false -> (count <= N))",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_false_implies_overflow__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_false_implies_overflow",
+      "kind": "consequent_trivial",
+      "formula": "[] (false -> true)",
+      "original": "[] (false -> (count <= N))",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_full_implies_can_produce__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_full_implies_can_produce",
+      "kind": "original",
+      "formula": "[] ((count == N) -> (count < N))",
+      "original": "[] ((count == N) -> (count < N))",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_full_implies_can_produce__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_full_implies_can_produce",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> (count < N))",
+      "original": "[] ((count == N) -> (count < N))",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_full_implies_can_produce__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_full_implies_can_produce",
+      "kind": "consequent_trivial",
+      "formula": "[] ((count == N) -> true)",
+      "original": "[] ((count == N) -> (count < N))",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_abort_implies_all_commit__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_abort_implies_all_commit",
+      "kind": "original",
+      "formula": "[] ((decision == d_abort) -> (outcome[0] == d_commit))",
+      "original": "[] ((decision == d_abort) -> (outcome[0] == d_commit))",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_abort_implies_all_commit__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_abort_implies_all_commit",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> (outcome[0] == d_commit))",
+      "original": "[] ((decision == d_abort) -> (outcome[0] == d_commit))",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_abort_implies_all_commit__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_abort_implies_all_commit",
+      "kind": "consequent_trivial",
+      "formula": "[] ((decision == d_abort) -> true)",
+      "original": "[] ((decision == d_abort) -> (outcome[0] == d_commit))",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_listen_implies_accept__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_listen_implies_accept",
+      "kind": "original",
+      "formula": "[] ((sstate == LISTEN) -> server_accepted)",
+      "original": "[] ((sstate == LISTEN) -> server_accepted)",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_listen_implies_accept__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_listen_implies_accept",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> server_accepted)",
+      "original": "[] ((sstate == LISTEN) -> server_accepted)",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_listen_implies_accept__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_listen_implies_accept",
+      "kind": "consequent_trivial",
+      "formula": "[] ((sstate == LISTEN) -> true)",
+      "original": "[] ((sstate == LISTEN) -> server_accepted)",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_want_implies_eat__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_want_implies_eat",
+      "kind": "original",
+      "formula": "[] (hungry0 -> <> eating[0])",
+      "original": "[] (hungry0 -> <> eating[0])",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_want_implies_eat__antecedent_forced",
+      "source": "component_e_constructed",
+      "property_id": "constructed_want_implies_eat",
+      "kind": "antecedent_forced",
+      "formula": "[] (true -> <> eating[0])",
+      "original": "[] (hungry0 -> <> eating[0])",
+      "vacuous": "no",
+      "note": "true -> Y is a stronger real claim (Y must always hold), not an empty one"
+    },
+    {
+      "id": "constructed_want_implies_eat__consequent_trivial",
+      "source": "component_e_constructed",
+      "property_id": "constructed_want_implies_eat",
+      "kind": "consequent_trivial",
+      "formula": "[] (hungry0 -> true)",
+      "original": "[] (hungry0 -> <> eating[0])",
+      "vacuous": "yes",
+      "note": "X -> true is a tautology; the claim never constrains the model"
+    },
+    {
+      "id": "constructed_want_implies_eat__eventually_to_true",
+      "source": "component_e_constructed",
+      "property_id": "constructed_want_implies_eat",
+      "kind": "eventually_to_true",
+      "formula": "[] (hungry0 -> <> true)",
+      "original": "[] (hungry0 -> <> eating[0])",
+      "vacuous": "yes",
+      "note": "eventually-true holds on any infinite run, so the liveness obligation does no work"
+    },
+    {
+      "id": "constructed_neighbor_pair__original",
+      "source": "component_e_constructed",
+      "property_id": "constructed_neighbor_pair",
+      "kind": "original",
+      "formula": "[] !(eating[0] && eating[1])",
+      "original": "[] !(eating[0] && eating[1])",
+      "vacuous": "no",
+      "note": "the formula still states a real safety or liveness claim"
+    },
+    {
+      "id": "constructed_neighbor_pair__guard_false",
+      "source": "component_e_constructed",
+      "property_id": "constructed_neighbor_pair",
+      "kind": "guard_false",
+      "formula": "[] ! (false && true)",
+      "original": "[] !(eating[0] && eating[1])",
+      "vacuous": "yes",
+      "note": "the safety guard is replaced by false, so 'never' becomes [] true"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Component C: controlled missing-assumption edits (methodology §7.3).
+# Each ambiguous requirement is the precise text with exactly one constraint
+# sentence deleted. No other wording is changed.
+procedure: >
+  Copy requirement_precise.txt to requirement_ambiguous.txt, then delete the
+  sentence named below. Do not paraphrase, reorder, or add text.
+
+edits:
+  peterson:
+    deleted: >
+      The turn variable is the tie-breaker: when both flags are set, the
+      process that last wrote turn waits.
+    constraint: turn-variable tie-breaker
+  producer_consumer:
+    deleted: >
+      The buffer length must never exceed N (no overflow) and must never go
+      negative.
+    constraint: no buffer overflow or underflow
+  dining_philosophers:
+    deleted: >
+      To avoid deadlock, every philosopher acquires forks in a fixed order:
+      the lower-numbered fork first, then the higher-numbered fork.
+    constraint: ordered fork acquisition
+  two_phase_commit:
+    deleted: >
+      In phase two the coordinator broadcasts a single decision: commit if
+      and only if every participant voted commit; otherwise abort.
+    constraint: commit iff unanimous vote-commit
+  tcp_handshake:
+    deleted: >
+      A server must not accept a half-open connection: it must not enter
+      ESTABLISHED, or deliver the connection to the application as accepted,
+      after only a SYN without the completing ACK.
+    constraint: no half-open accept

@@ -1,0 +1,10 @@
+Five philosophers sit around a table with five forks. Philosopher i needs
+fork i and fork (i+1) modulo 5 in order to eat.
+
+After eating, both forks are released. Under that acquisition order the
+system is deadlock-free: it is never the case that every philosopher holds
+one fork and waits forever for the other.
+
+Assume a fair scheduler so a philosopher who can acquire the next fork is
+eventually scheduled. There are exactly five philosophers and five forks; no
+other process picks up forks.

@@ -1,0 +1,12 @@
+protocol: two_phase_commit
+property_class: atomicity — all participants commit or all abort
+languages: [python, promela]
+source:
+  python: reference.py
+  promela: reference.pml
+requirements:
+  precise: requirement_precise.txt
+  ambiguous: requirement_ambiguous.txt
+notes: >
+  Coordinator and three participants. Ambiguous variant deletes the
+  unanimous-vote decision rule (see requirement_edits.yaml).

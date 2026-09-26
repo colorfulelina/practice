@@ -1,0 +1,13 @@
+A coordinator and a fixed set of participants run two-phase commit on one
+transaction.
+
+In phase one the coordinator sends a vote request. Each participant replies
+vote-commit or vote-abort.
+
+Atomicity: after the protocol finishes, every participant has the same outcome.
+It is never the case that one participant commits and another aborts. If any
+participant voted abort, or the coordinator decides abort, all participants
+abort. If the decision is commit, all participants commit.
+
+Assume messages between the coordinator and participants are delivered, and
+there are no extra writers of participant decision state.

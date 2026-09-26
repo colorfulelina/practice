@@ -1,0 +1,12 @@
+Peterson's algorithm provides mutual exclusion for two processes that share
+a critical section.
+
+At most one process may occupy the critical section at any time. If a process
+wants to enter the critical section, it eventually does (starvation freedom).
+
+Each process i sets flag[i] to true to announce interest, then writes turn = j
+(the other process). It waits while flag[j] is true and turn == j. After
+leaving the critical section, a process sets flag[i] to false.
+
+Assume a weakly fair scheduler: a continuously enabled process is eventually
+scheduled. There are exactly two processes and no other writers to flag or turn.

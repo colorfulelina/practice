@@ -1,0 +1,52 @@
+{
+  "protocol": "peterson",
+  "source": "reference.py",
+  "n_candidates": 26,
+  "n_kept": 6,
+  "n_killed_candidates": 10,
+  "n_survived_candidates": 16,
+  "mutants": [
+    {
+      "file": "cosmic_00_AndWithOr_0.py",
+      "operator": "core/ReplaceAndWithOr",
+      "occurrence": 0,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_01_Comparison_Gt_GtE_0.py",
+      "operator": "core/ReplaceComparisonOperator_Gt_GtE",
+      "occurrence": 0,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_02_FalseWithTrue_2.py",
+      "operator": "core/ReplaceFalseWithTrue",
+      "occurrence": 2,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_03_FalseWithTrue_3.py",
+      "operator": "core/ReplaceFalseWithTrue",
+      "occurrence": 3,
+      "test_outcome": "killed",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_04_Comparison_Eq_NotEq_0.py",
+      "operator": "core/ReplaceComparisonOperator_Eq_NotEq",
+      "occurrence": 0,
+      "test_outcome": "survived",
+      "engine": "cosmic-ray"
+    },
+    {
+      "file": "cosmic_05_FalseWithTrue_0.py",
+      "operator": "core/ReplaceFalseWithTrue",
+      "occurrence": 0,
+      "test_outcome": "survived",
+      "engine": "cosmic-ray"
+    }
+  ]
+}

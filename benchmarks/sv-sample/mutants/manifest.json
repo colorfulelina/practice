@@ -1,0 +1,980 @@
+{
+  "seed": 7,
+  "categories": [
+    "c/reducercommutativity",
+    "c/pthread",
+    "c/loops",
+    "c/array-examples"
+  ],
+  "n_correct_tasks": 150,
+  "n_mutants": 80,
+  "n_skipped": 21,
+  "mutants": [
+    {
+      "file": "c__pthread__triangular-2.c__boundary_48.c",
+      "task_yaml": "c/pthread/triangular-2.yml",
+      "source_file": "c/pthread/triangular-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 48,
+      "old": ">=",
+      "new": ">",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__sorting_selectionsort_ground-2.c__boundary_23.c",
+      "task_yaml": "c/array-examples/sorting_selectionsort_ground-2.yml",
+      "source_file": "c/array-examples/sorting_selectionsort_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 23,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__butterfly.c__comparison_50.c",
+      "task_yaml": "c/pthread/butterfly.yml",
+      "source_file": "c/pthread/butterfly.c",
+      "original_expected": true,
+      "operator": "comparison",
+      "line": 50,
+      "old": "==",
+      "new": "!=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__loops__sum04-1.c__boundary_15.c",
+      "task_yaml": "c/loops/sum04-1.yml",
+      "source_file": "c/loops/sum04-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 15,
+      "old": "<=",
+      "new": "<",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__trex01-2.c__boundary_25.c",
+      "task_yaml": "c/loops/trex01-2.yml",
+      "source_file": "c/loops/trex01-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 25,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__triangular-longest-1.c__boundary_24.c",
+      "task_yaml": "c/pthread/triangular-longest-1.yml",
+      "source_file": "c/pthread/triangular-longest-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_24-1.c__boundary_35.c",
+      "task_yaml": "c/array-examples/sanfoundry_24-1.yml",
+      "source_file": "c/array-examples/sanfoundry_24-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 35,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__stack-2.c__boundary_110.c",
+      "task_yaml": "c/pthread/stack-2.yml",
+      "source_file": "c/pthread/stack-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 110,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_02_ground.c__boundary_23.c",
+      "task_yaml": "c/array-examples/sanfoundry_02_ground.yml",
+      "source_file": "c/array-examples/sanfoundry_02_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 23,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__sum04-2.c__boundary_15.c",
+      "task_yaml": "c/loops/sum04-2.yml",
+      "source_file": "c/loops/sum04-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 15,
+      "old": "<=",
+      "new": "<",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init9_ground-1.c__boundary_11.c",
+      "task_yaml": "c/array-examples/standard_init9_ground-1.yml",
+      "source_file": "c/array-examples/standard_init9_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 11,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__sep05-1.c__boundary_24.c",
+      "task_yaml": "c/reducercommutativity/sep05-1.yml",
+      "source_file": "c/reducercommutativity/sep05-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init6_ground-2.c__boundary_26.c",
+      "task_yaml": "c/array-examples/standard_init6_ground-2.yml",
+      "source_file": "c/array-examples/standard_init6_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 26,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_running-1.c__boundary_27.c",
+      "task_yaml": "c/array-examples/standard_running-1.yml",
+      "source_file": "c/array-examples/standard_running-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__terminator_02-2.c__boundary_22.c",
+      "task_yaml": "c/loops/terminator_02-2.yml",
+      "source_file": "c/loops/terminator_02-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 22,
+      "old": ">",
+      "new": ">=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__veris.c_NetBSD-libc_loop.c__boundary_20.c",
+      "task_yaml": "c/loops/veris.c_NetBSD-libc_loop.yml",
+      "source_file": "c/loops/veris.c_NetBSD-libc_loop.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 20,
+      "old": "<=",
+      "new": "<",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_copyInit_ground.c__boundary_12.c",
+      "task_yaml": "c/array-examples/standard_copyInit_ground.yml",
+      "source_file": "c/array-examples/standard_copyInit_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 12,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__triangular-longer-1.c__boundary_52.c",
+      "task_yaml": "c/pthread/triangular-longer-1.yml",
+      "source_file": "c/pthread/triangular-longer-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 52,
+      "old": ">",
+      "new": ">=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__loops__veris.c_sendmail_tTflag_arr_one_loop.c__boundary_20.c",
+      "task_yaml": "c/loops/veris.c_sendmail_tTflag_arr_one_loop.yml",
+      "source_file": "c/loops/veris.c_sendmail_tTflag_arr_one_loop.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 20,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_copy8_ground-1.c__boundary_52.c",
+      "task_yaml": "c/array-examples/standard_copy8_ground-1.yml",
+      "source_file": "c/array-examples/standard_copy8_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 52,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__terminator_02-2_abstracted.c__boundary_33.c",
+      "task_yaml": "c/loops/terminator_02-2_abstracted.yml",
+      "source_file": "c/loops/terminator_02-2_abstracted.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 33,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__reorder_2.c__boundary_55.c",
+      "task_yaml": "c/pthread/reorder_2.yml",
+      "source_file": "c/pthread/reorder_2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 55,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__pthread__queue_longest.c__boundary_114.c",
+      "task_yaml": "c/pthread/queue_longest.yml",
+      "source_file": "c/pthread/queue_longest.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 114,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__loops__trex02-2.c__boundary_23.c",
+      "task_yaml": "c/loops/trex02-2.yml",
+      "source_file": "c/loops/trex02-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 23,
+      "old": ">",
+      "new": ">=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__reorder_5.c__boundary_39.c",
+      "task_yaml": "c/pthread/reorder_5.yml",
+      "source_file": "c/pthread/reorder_5.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 39,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__loops__sum03-1.c__boundary_20.c",
+      "task_yaml": "c/loops/sum03-1.yml",
+      "source_file": "c/loops/sum03-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 20,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init4_ground-1.c__boundary_11.c",
+      "task_yaml": "c/array-examples/standard_init4_ground-1.yml",
+      "source_file": "c/array-examples/standard_init4_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 11,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__max05-1.c__boundary_27.c",
+      "task_yaml": "c/reducercommutativity/max05-1.yml",
+      "source_file": "c/reducercommutativity/max05-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__sep40-1.c__boundary_43.c",
+      "task_yaml": "c/reducercommutativity/sep40-1.yml",
+      "source_file": "c/reducercommutativity/sep40-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 43,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__avg20-2.c__boundary_40.c",
+      "task_yaml": "c/reducercommutativity/avg20-2.yml",
+      "source_file": "c/reducercommutativity/avg20-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 40,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__avg05-1.c__boundary_26.c",
+      "task_yaml": "c/reducercommutativity/avg05-1.yml",
+      "source_file": "c/reducercommutativity/avg05-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 26,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_vararg_ground.c__boundary_23.c",
+      "task_yaml": "c/array-examples/standard_vararg_ground.yml",
+      "source_file": "c/array-examples/standard_vararg_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 23,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__triangular-1.c__boundary_24.c",
+      "task_yaml": "c/pthread/triangular-1.yml",
+      "source_file": "c/pthread/triangular-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__data_structures_set_multi_proc_ground-2.c__boundary_49.c",
+      "task_yaml": "c/array-examples/data_structures_set_multi_proc_ground-2.yml",
+      "source_file": "c/array-examples/data_structures_set_multi_proc_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 49,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_copyInitSum3_ground.c__boundary_30.c",
+      "task_yaml": "c/array-examples/standard_copyInitSum3_ground.yml",
+      "source_file": "c/array-examples/standard_copyInitSum3_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 30,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__queue.c__boundary_115.c",
+      "task_yaml": "c/pthread/queue.yml",
+      "source_file": "c/pthread/queue.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 115,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__standard_minInArray_ground-2.c__boundary_14.c",
+      "task_yaml": "c/array-examples/standard_minInArray_ground-2.yml",
+      "source_file": "c/array-examples/standard_minInArray_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 14,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init4_ground-2.c__boundary_32.c",
+      "task_yaml": "c/array-examples/standard_init4_ground-2.yml",
+      "source_file": "c/array-examples/standard_init4_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 32,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_two_index_02.c__boundary_30.c",
+      "task_yaml": "c/array-examples/standard_two_index_02.yml",
+      "source_file": "c/array-examples/standard_two_index_02.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 30,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__queue_longer.c__boundary_114.c",
+      "task_yaml": "c/pthread/queue_longer.yml",
+      "source_file": "c/pthread/queue_longer.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 114,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__loops__count_up_down-1.c__boundary_17.c",
+      "task_yaml": "c/loops/count_up_down-1.yml",
+      "source_file": "c/loops/count_up_down-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 17,
+      "old": ">",
+      "new": ">=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__sep20-1.c__boundary_24.c",
+      "task_yaml": "c/reducercommutativity/sep20-1.yml",
+      "source_file": "c/reducercommutativity/sep20-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 24,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__queue_ok_longest.c__boundary_104.c",
+      "task_yaml": "c/pthread/queue_ok_longest.yml",
+      "source_file": "c/pthread/queue_ok_longest.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 104,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__pthread__lazy01.c__boundary_40.c",
+      "task_yaml": "c/pthread/lazy01.yml",
+      "source_file": "c/pthread/lazy01.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 40,
+      "old": ">=",
+      "new": ">",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__pthread__triangular-longer-2.c__boundary_33.c",
+      "task_yaml": "c/pthread/triangular-longer-2.yml",
+      "source_file": "c/pthread/triangular-longer-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 33,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_27_ground.c__boundary_31.c",
+      "task_yaml": "c/array-examples/sanfoundry_27_ground.yml",
+      "source_file": "c/array-examples/sanfoundry_27_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 31,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init2_ground-2.c__boundary_22.c",
+      "task_yaml": "c/array-examples/standard_init2_ground-2.yml",
+      "source_file": "c/array-examples/standard_init2_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 22,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__array-1.c__boundary_24.c",
+      "task_yaml": "c/loops/array-1.yml",
+      "source_file": "c/loops/array-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 24,
+      "old": "<=",
+      "new": "<",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__sync01.c__boundary_25.c",
+      "task_yaml": "c/pthread/sync01.yml",
+      "source_file": "c/pthread/sync01.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 25,
+      "old": ">",
+      "new": ">=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__standard_find_ground-1.c__boundary_18.c",
+      "task_yaml": "c/array-examples/standard_find_ground-1.yml",
+      "source_file": "c/array-examples/standard_find_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 18,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__rangesum05.c__boundary_60.c",
+      "task_yaml": "c/reducercommutativity/rangesum05.yml",
+      "source_file": "c/reducercommutativity/rangesum05.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 60,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__max10-1.c__boundary_40.c",
+      "task_yaml": "c/reducercommutativity/max10-1.yml",
+      "source_file": "c/reducercommutativity/max10-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 40,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_sentinel-2.c__boundary_19.c",
+      "task_yaml": "c/array-examples/standard_sentinel-2.yml",
+      "source_file": "c/array-examples/standard_sentinel-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 19,
+      "old": ">=",
+      "new": ">",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__triangular-longest-2.c__boundary_33.c",
+      "task_yaml": "c/pthread/triangular-longest-2.yml",
+      "source_file": "c/pthread/triangular-longest-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 33,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__pthread__stack_longest-2.c__boundary_95.c",
+      "task_yaml": "c/pthread/stack_longest-2.yml",
+      "source_file": "c/pthread/stack_longest-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 95,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__reducercommutativity__sum10-1.c__boundary_49.c",
+      "task_yaml": "c/reducercommutativity/sum10-1.yml",
+      "source_file": "c/reducercommutativity/sum10-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 49,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__pthread__stack_longer-1.c__boundary_90.c",
+      "task_yaml": "c/pthread/stack_longer-1.yml",
+      "source_file": "c/pthread/stack_longer-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 90,
+      "old": "<",
+      "new": "<=",
+      "engine": "token-fallback"
+    },
+    {
+      "file": "c__array-examples__standard_two_index_09.c__boundary_14.c",
+      "task_yaml": "c/array-examples/standard_two_index_09.yml",
+      "source_file": "c/array-examples/standard_two_index_09.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 14,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__terminator_03-2_abstracted.c__boundary_27.c",
+      "task_yaml": "c/loops/terminator_03-2_abstracted.yml",
+      "source_file": "c/loops/terminator_03-2_abstracted.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__string-1.c__boundary_58.c",
+      "task_yaml": "c/loops/string-1.yml",
+      "source_file": "c/loops/string-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 58,
+      "old": ">",
+      "new": ">=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_compareModified_ground.c__boundary_36.c",
+      "task_yaml": "c/array-examples/standard_compareModified_ground.yml",
+      "source_file": "c/array-examples/standard_compareModified_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 36,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__n.c40.c__boundary_20.c",
+      "task_yaml": "c/loops/n.c40.yml",
+      "source_file": "c/loops/n.c40.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 20,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__max40-1.c__boundary_49.c",
+      "task_yaml": "c/reducercommutativity/max40-1.yml",
+      "source_file": "c/reducercommutativity/max40-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 49,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__sep.c__boundary_39.c",
+      "task_yaml": "c/reducercommutativity/sep.yml",
+      "source_file": "c/reducercommutativity/sep.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 39,
+      "old": ">",
+      "new": ">=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_copy5_ground-1.c__boundary_32.c",
+      "task_yaml": "c/array-examples/standard_copy5_ground-1.yml",
+      "source_file": "c/array-examples/standard_copy5_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 32,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__n.c11.c__comparison_23.c",
+      "task_yaml": "c/loops/n.c11.yml",
+      "source_file": "c/loops/n.c11.c",
+      "original_expected": true,
+      "operator": "comparison",
+      "line": 23,
+      "old": "==",
+      "new": "!=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__sum01_bug02.c__boundary_18.c",
+      "task_yaml": "c/loops/sum01_bug02.yml",
+      "source_file": "c/loops/sum01_bug02.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 18,
+      "old": "<=",
+      "new": "<",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__eureka_01-2.c__boundary_45.c",
+      "task_yaml": "c/loops/eureka_01-2.yml",
+      "source_file": "c/loops/eureka_01-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 45,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init3_ground-2.c__boundary_27.c",
+      "task_yaml": "c/array-examples/standard_init3_ground-2.yml",
+      "source_file": "c/array-examples/standard_init3_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 27,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__trex04_abstracted.c__boundary_41.c",
+      "task_yaml": "c/loops/trex04_abstracted.yml",
+      "source_file": "c/loops/trex04_abstracted.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 41,
+      "old": ">=",
+      "new": ">",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__terminator_01.c__boundary_18.c",
+      "task_yaml": "c/loops/terminator_01.yml",
+      "source_file": "c/loops/terminator_01.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 18,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__sorting_bubblesort_ground-2.c__boundary_21.c",
+      "task_yaml": "c/array-examples/sorting_bubblesort_ground-2.yml",
+      "source_file": "c/array-examples/sorting_bubblesort_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 21,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__loops__matrix-1.c__boundary_22.c",
+      "task_yaml": "c/loops/matrix-1.yml",
+      "source_file": "c/loops/matrix-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 22,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__sanfoundry_43_ground.c__boundary_26.c",
+      "task_yaml": "c/array-examples/sanfoundry_43_ground.yml",
+      "source_file": "c/array-examples/sanfoundry_43_ground.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 26,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__sorting_bubblesort_ground-1.c__boundary_12.c",
+      "task_yaml": "c/array-examples/sorting_bubblesort_ground-1.yml",
+      "source_file": "c/array-examples/sorting_bubblesort_ground-1.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 12,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_two_index_01.c__boundary_30.c",
+      "task_yaml": "c/array-examples/standard_two_index_01.yml",
+      "source_file": "c/array-examples/standard_two_index_01.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 30,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init8_ground-2.c__boundary_16.c",
+      "task_yaml": "c/array-examples/standard_init8_ground-2.yml",
+      "source_file": "c/array-examples/standard_init8_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 16,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_init7_ground-2.c__boundary_36.c",
+      "task_yaml": "c/array-examples/standard_init7_ground-2.yml",
+      "source_file": "c/array-examples/standard_init7_ground-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 36,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__array-examples__standard_running-2.c__boundary_21.c",
+      "task_yaml": "c/array-examples/standard_running-2.yml",
+      "source_file": "c/array-examples/standard_running-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 21,
+      "old": ">=",
+      "new": ">",
+      "engine": "pycparser"
+    },
+    {
+      "file": "c__reducercommutativity__max60-2.c__boundary_40.c",
+      "task_yaml": "c/reducercommutativity/max60-2.yml",
+      "source_file": "c/reducercommutativity/max60-2.c",
+      "original_expected": true,
+      "operator": "boundary",
+      "line": 40,
+      "old": "<",
+      "new": "<=",
+      "engine": "pycparser"
+    }
+  ],
+  "skipped": [
+    {
+      "task": "c/pthread/fib_safe-7.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/fib_unsafe-10.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/fib_safe-12.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/fib_safe-6.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/bigshot_s.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/reducercommutativity/sep05-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/reducercommutativity/max05-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/loops/veris.c_sendmail_tTflag_arr_one_loop.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/pthread/fib_safe-12.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/reducercommutativity/avg05-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/loops/trex02-2.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/pthread/fib_unsafe-12.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/queue_longer.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/loops/array-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/pthread/fib_safe-10.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/fib_safe-11.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/loops/sum04-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/pthread/fib_safe-10.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/pthread/fib_unsafe-5.yml",
+      "reason": "no mutation sites"
+    },
+    {
+      "task": "c/pthread/stack_longer-1.yml",
+      "reason": "duplicate source"
+    },
+    {
+      "task": "c/loops/n.c40.yml",
+      "reason": "duplicate source"
+    }
+  ]
+}

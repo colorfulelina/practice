@@ -1,0 +1,12 @@
+protocol: peterson
+property_class: mutual exclusion and starvation freedom (linear temporal logic)
+languages: [python, promela]
+source:
+  python: reference.py
+  promela: reference.pml
+requirements:
+  precise: requirement_precise.txt
+  ambiguous: requirement_ambiguous.txt
+notes: >
+  Classical two-process Peterson mutex. Ambiguous variant deletes the
+  turn-variable tie-breaker sentence (see requirement_edits.yaml).

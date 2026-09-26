@@ -1,0 +1,12 @@
+protocol: producer_consumer
+property_class: buffer-overflow-freedom and no-deadlock (linear temporal logic)
+languages: [python, promela]
+source:
+  python: reference.py
+  promela: reference.pml
+requirements:
+  precise: requirement_precise.txt
+  ambiguous: requirement_ambiguous.txt
+notes: >
+  Bounded buffer of fixed capacity 4. Ambiguous variant deletes the
+  overflow/underflow sentence (see requirement_edits.yaml).

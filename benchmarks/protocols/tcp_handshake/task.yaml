@@ -1,0 +1,12 @@
+protocol: tcp_handshake
+property_class: correct handshake sequence and no half-open connection acceptance
+languages: [python, promela]
+source:
+  python: reference.py
+  promela: reference.pml
+requirements:
+  precise: requirement_precise.txt
+  ambiguous: requirement_ambiguous.txt
+notes: >
+  TCP three-way handshake from RFC 9293. Ambiguous variant deletes the
+  no-half-open-accept sentence (see requirement_edits.yaml).

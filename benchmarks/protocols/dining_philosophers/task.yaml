@@ -1,0 +1,12 @@
+protocol: dining_philosophers
+property_class: deadlock freedom under a fixed acquisition order (linear temporal logic)
+languages: [python, promela]
+source:
+  python: reference.py
+  promela: reference.pml
+requirements:
+  precise: requirement_precise.txt
+  ambiguous: requirement_ambiguous.txt
+notes: >
+  Five philosophers, five forks. Ambiguous variant deletes the ordered
+  fork-acquisition sentence (see requirement_edits.yaml).

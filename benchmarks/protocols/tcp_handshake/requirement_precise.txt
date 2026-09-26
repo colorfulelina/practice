@@ -1,0 +1,15 @@
+The TCP three-way handshake, following RFC 9293, establishes a connection
+between a client (active opener) and a server (passive opener).
+
+The client starts in CLOSED, sends SYN, and enters SYN_SENT. The server starts
+in LISTEN. On receiving SYN it sends SYN-ACK and enters SYN_RECEIVED. On
+receiving SYN-ACK the client sends ACK and enters ESTABLISHED. On receiving
+that ACK the server enters ESTABLISHED.
+
+The connection is not accepted as open until both sides have reached
+ESTABLISHED. A server must not accept a half-open connection: it must not
+enter ESTABLISHED, or deliver the connection to the application as accepted,
+after only a SYN without the completing ACK.
+
+Assume in-order delivery of these handshake segments for this reference
+implementation. Loss and retransmission are out of scope.
