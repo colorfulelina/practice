@@ -131,3 +131,92 @@ def test_verifier_feedback_retries_without_auditor():
     blob = " ".join(m[0]["content"] for m in seen).lower()
     assert "deepseek" not in blob
     assert "vacuity" not in blob
+
+
+def test_few_shot_verifier_feedback_keeps_examples_and_spin_errors():
+    seen = []
+    verdicts = [
+        SpinVerifyResult(False, "claim starvation_free redefined", True, False, []),
+        SpinVerifyResult(True, "ok", False, False, []),
+        SpinVerifyResult(True, "ok", False, True, []),
+    ]
+
+    def verify_fn(_text):
+        return verdicts.pop(0)
+
+    result = run_baseline(
+        "few_shot_verifier_feedback",
+        "peterson",
+        chat_fn=_fake_chat(seen),
+        verify_fn=verify_fn,
+        cap=5,
+    )
+    assert result.baseline == "few_shot_verifier_feedback"
+    assert result.n_calls == 3
+    assert result.retries == 2
+    assert result.verified is True
+    assert result.used_validator is False
+    assert result.used_auditor is False
+    gold = get_protocol("peterson").promela_path.read_text(encoding="utf-8")
+    first = seen[0][1]["content"]
+    second = seen[1][1]["content"]
+    third = seen[2][1]["content"]
+    assert first.count("Example —") == 3
+    assert "VERIFIER FEEDBACK" not in first
+    assert second.count("Example —") == 3
+    assert "VERIFIER FEEDBACK" in second
+    assert "claim starvation_free redefined" in second
+    assert "Example —" not in third
+    assert "Do not change the Promela" in seen[2][0]["content"]
+    assert "MODEL (do not edit)" in third
+    assert gold.strip() not in first
+    assert gold.strip() not in second
+    assert gold.strip() not in third
+
+
+def test_few_shot_verifier_feedback_keeps_last_legal_file():
+    seen = []
+    n = {"i": 0}
+    illegal = """
+    {
+      "properties": [
+        {"name": "mutex", "formula": "[] !(inCS0 && inCS1)"},
+        {"name": "mutex", "formula": "[] !(inCS0 && inCS1)"}
+      ]
+    }
+    """
+
+    def fake_chat(*, model, messages, timeout):
+        seen.append(messages)
+        n["i"] += 1
+        if n["i"] == 2:
+            return illegal
+        return SAMPLE
+
+    def verify_fn(text):
+        if text.count("ltl mutex") > 1:
+            return SpinVerifyResult(False, "claim mutex redefined", True, False, [])
+        if "bool flag0" in text:
+            if n["i"] >= 3:
+                return SpinVerifyResult(True, "ok", False, True, [])
+            return SpinVerifyResult(True, "ok", False, False, [])
+        return SpinVerifyResult(False, "parse error", True, False, [])
+
+    result = run_baseline(
+        "few_shot_verifier_feedback",
+        "peterson",
+        chat_fn=fake_chat,
+        verify_fn=verify_fn,
+        cap=5,
+    )
+    assert result.n_calls == 3
+    assert result.history[0]["kept"] is True
+    assert result.history[0]["phase"] == "model"
+    assert result.history[1]["kept"] is False
+    assert result.history[1]["phase"] == "properties"
+    assert "rejected illegal rewrite" in result.history[1]["note"]
+    assert result.history[2]["kept"] is True
+    assert result.history[2]["phase"] == "properties"
+    assert result.verified is True
+    assert "mutex.lock" not in (result.artifact or {}).get("model", "")
+    assert result.artifact["model"].count("ltl ") == 0

@@ -74,6 +74,19 @@ def test_classify_parse_failure_is_modeling_error():
     )
 
 
+def test_classify_vacuous_low_trace_is_modeling_error():
+    assert (
+        classify_failure(
+            {"proved": False, "n_errors": 1, "syntax_ok": True},
+            {"vacuous": True},
+            0.0,
+            False,
+            True,
+        )
+        == "modeling_error"
+    )
+
+
 def test_trace_agreement_and_kinds():
     ref = ["flag_set:0", "turn:1", "enter:0", "leave:0"]
     assert trace_agreement(ref, ref) == 1.0
@@ -81,6 +94,13 @@ def test_trace_agreement_and_kinds():
     assert only_in_a(["enter:0"], ["flag_set:0"]) is True
     pml = "proctype P() { flag_set = 1; turn = 1; }"
     assert model_events_from_promela(pml, ref) == ["flag_set", "turn"]
+    stub = (
+        "byte client_state = 0;\n"
+        "proctype client() { client_state = 1 }\n"
+        "proctype server() { run client() }\n"
+    )
+    tcp_ref = ["client:SYN", "server:SYN_ACK"]
+    assert model_events_from_promela(stub, tcp_ref) == []
 
 
 def test_replace_ltl_swaps_named_claim():

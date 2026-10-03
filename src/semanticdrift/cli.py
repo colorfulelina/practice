@@ -171,7 +171,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     vtool.add_argument("--file", required=True, help="Path to .c, .smv, .dfy, or .pml")
     base = sub.add_parser(
         "baseline",
-        help="One §8.8 baseline (zero-shot, few-shot, CoT, verifier-feedback, retrieval, rules).",
+        help=(
+            "One §8.8 baseline, or few_shot_verifier_feedback "
+            "(examples plus spin -a retries)."
+        ),
     )
     base.add_argument("--name", required=True, help="Protocol folder name, for example peterson.")
     base.add_argument(

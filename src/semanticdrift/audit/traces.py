@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import difflib
 import inspect
+import re
 from typing import Any, Dict, List, Sequence, Tuple
 
 
@@ -33,11 +34,30 @@ def kind_agreement(reference_events: Sequence[str], model_events: Sequence[str])
 
 
 def model_events_from_promela(promela: str, reference_events: Sequence[str]) -> List[str]:
+    """Kinds must appear as events, not as `proctype` / `inline` / `run` names."""
     found: List[str] = []
     for kind in event_kinds(reference_events):
-        if kind and kind in promela:
+        if kind and _kind_used_as_event(kind, promela):
             found.append(kind)
     return found
+
+
+def _kind_used_as_event(kind: str, promela: str) -> bool:
+    escaped = re.escape(kind)
+    if re.search(rf'["\'][^"\']*{escaped}[^"\']*["\']', promela):
+        return True
+    if re.search(rf"(?:_emit|printf|print)\s*\([^)]*{escaped}", promela):
+        return True
+    for match in re.finditer(rf"\b{escaped}\b", promela):
+        before = promela[: match.start()]
+        if re.search(r"(?:active\s+)?proctype\s+$", before):
+            continue
+        if re.search(r"inline\s+$", before):
+            continue
+        if re.search(r"\brun\s+$", before):
+            continue
+        return True
+    return False
 
 
 def instrument_and_run(module: Any, entry_point: str = "run", inputs: Sequence[Any] = ()) -> List[str]:

@@ -1,4 +1,9 @@
-"""Five-way failure attribution (methodology §8.6.3)."""
+"""Five-way failure attribution (methodology §8.6.3).
+
+Parse failure and a vacuous claim on a low-trace model are both
+modeling_error. Vacuity alone is property_error only when traces still
+look like the protocol.
+"""
 
 from __future__ import annotations
 
@@ -29,10 +34,13 @@ def classify_failure(
         and trace_score > TRACE_THRESHOLD
     ):
         return "no_failure"
-    if vacuity_result.get("vacuous"):
-        return "property_error"
     if spin_result.get("syntax_ok") is False:
         return "modeling_error"
+    # A vacuous claim must not hide a model that does not implement the protocol.
+    if vacuity_result.get("vacuous") and trace_score <= TRACE_THRESHOLD:
+        return "modeling_error"
+    if vacuity_result.get("vacuous"):
+        return "property_error"
     if trace_score <= TRACE_THRESHOLD and trace_only_in_model and not trace_only_in_reference:
         return "modeling_error"
     if trace_score <= TRACE_THRESHOLD and trace_only_in_reference:
